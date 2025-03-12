@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="recipe.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="home.html">Recipe Vault</a> </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+         
+            <div class="dropdown">
+            <li><a href="recipes.html">Recipes</a>
+                <div class="dropdown-content">
+                <a href="breakfast.html">Breakfast</a>
+                <a href="lunch.html">Lunch/Dinner</a>
+                <a href="desserts.html">Desserts</a>
+                <a href="healthy.html#">Healthy Options</a>
+                <a href="snacks.html">Snacks</a>
+                <a href="drinks.html">Drinks</a>
+                </div>
+            </li>
+            </div>
+        <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+        
+        <div class="search" >
+        <input type="text" placeholder="Search recipes...">
+        </div>
+        </div>
+    </nav>
+    <header>
+        
+        <h1 class="h1">Recipe Details</h1>
+    </header>
+    <main>
+        <div id="recipe-detail"></div> <!-- Recipe details will be dynamically inserted here -->
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Recipe Vault</p>
+        <a href="home.html">&larr; Back home</a>
+    </footer>
+<script>
+    // Array of recipe data (can later be moved to a separate file or fetched via API)
+const recipes = [
+    {
+        id: 1,
+        name: "Butternut Squash Soup",
+        image: "Photos/butternut squash.jpg",
+        ingredients: [
+            "1 medium butternut squash, peeled and cubed",
+            "2 medium carrots, sliced",
+            "1 onion, diced",
+            "4 cups vegetable stock",
+            "1/2 cup heavy cream",
+            "1 teaspoon ground nutmeg",
+            "2 tablespoons olive oil",
+            "Salt and pepper to taste"
+        ],
+        directions: [
+            "Preheat the oven to 400°F (200°C). Toss the butternut squash and carrots with olive oil, salt, and pepper. Roast for 25-30 minutes until tender.",
+            "In a large pot, sauté the diced onion in olive oil over medium heat until translucent.",
+            "Add the roasted vegetables and vegetable stock to the pot. Bring to a boil, then simmer for 10 minutes.",
+            "Blend the mixture using an immersion blender until smooth.",
+            "Stir in heavy cream and nutmeg. Adjust seasoning with salt and pepper.",
+            "Serve warm with a drizzle of cream or a sprinkle of fresh herbs."
+        ]
+    },
+    {
+        id: 2,
+        name: "Shepherd's Pie",
+        image: "Photos/shepherds pie.jpg",
+        ingredients: [
+            "1 pound ground beef",
+            "1 onion, diced",
+            "2 carrots, diced",
+            "1 cup frozen peas",
+            "2 tablespoons tomato paste",
+            "1 tablespoon Worcestershire sauce",
+            "1 cup beef stock",
+            "4 large potatoes, peeled and boiled",
+            "1/4 cup milk",
+            "2 tablespoons butter",
+            "Salt and pepper to taste"
+        ],
+        directions: [
+            "Preheat the oven to 375°F (190°C).",
+            "In a skillet, cook the ground beef over medium heat until browned. Remove excess fat.",
+            "Add the onion and carrots, cooking until softened. Stir in tomato paste and Worcestershire sauce.",
+            "Pour in the beef stock, add peas, and simmer until the mixture thickens.",
+            "Mash the boiled potatoes with butter and milk. Season with salt and pepper.",
+            "Layer the meat mixture in a baking dish and spread the mashed potatoes on top.",
+            "Bake for 25-30 minutes until the top is golden brown."
+        ]
+    },
+    {
+        id: 3,
+        name: "Spiced Apple Crumble",
+        image: "Photos/Spiced Apple Crumble.jpg",
+        ingredients: [
+            "4 large apples, peeled and sliced",
+            "1/2 cup granulated sugar",
+            "1 teaspoon cinnamon",
+            "1/2 teaspoon nutmeg",
+            "1 cup rolled oats",
+            "1/2 cup brown sugar",
+            "1/2 cup all-purpose flour",
+            "1/4 cup butter, melted"
+        ],
+        directions: [
+            "Preheat the oven to 350°F (175°C).",
+            "Toss the apple slices with granulated sugar, cinnamon, and nutmeg. Spread them in a greased baking dish.",
+            "In a bowl, mix oats, brown sugar, flour, and melted butter until crumbly.",
+            "Sprinkle the crumble mixture evenly over the apples.",
+            "Bake for 35-40 minutes until the topping is golden and the apples are tender.",
+            "Serve warm with vanilla ice cream or whipped cream."
+        ]
+    }
+];
+
+/**
+ * Retrieves a recipe by its ID from the URL parameters.
+ * @returns {Object|null} The recipe object, or null if not found.
+ */
+function getRecipeFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'));
+    return recipes.find(recipe => recipe.id === id) || null;
+}
+
+/**
+ * Displays the recipe details on the page.
+ * @param {Object} recipe - The recipe object to display.
+ */
+function displayRecipeDetails(recipe) {
+    const detailContainer = document.getElementById('recipe-detail');
+    if (!detailContainer) return;
+
+    // Clear previous content
+    detailContainer.innerHTML = '';
+
+    // Add recipe name
+    const title = document.createElement('h1');
+    title.textContent = recipe.name;
+
+    // Add recipe image
+    const image = document.createElement('img');
+    image.src = recipe.image;
+    image.alt = recipe.name;
+    image.classList.add('detail-image');
+
+    // Add ingredients
+    const ingredientsHeader = document.createElement('h1');
+    ingredientsHeader.textContent = 'Ingredients';
+    const ingredientsList = document.createElement('ul');
+    recipe.ingredients.forEach(ingredient => {
+        const listItem = document.createElement('li');
+        listItem.textContent = ingredient;
+        ingredientsList.appendChild(listItem);
+    });
+
+    // Add directions
+    const directionsHeader = document.createElement('h1');
+    directionsHeader.textContent = 'Directions';
+    const directionsParagraph = document.createElement('p');
+    directionsParagraph.textContent = recipe.directions.join(' ');
+
+    // Append all elements
+    detailContainer.appendChild(title);
+    detailContainer.appendChild(image);
+    detailContainer.appendChild(ingredientsHeader);
+    detailContainer.appendChild(ingredientsList);
+    detailContainer.appendChild(directionsHeader);
+    detailContainer.appendChild(directionsParagraph);
+}
+
+// Initialize on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    const recipe = getRecipeFromUrl();
+    if (recipe) {
+        displayRecipeDetails(recipe);
+    } else {
+        const detailContainer = document.getElementById('recipe-detail');
+        detailContainer.textContent = 'Recipe not found!';
+    }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Vault</title>
+    <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="home.html">Recipe Vault</a></div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+         
+            <div class="dropdown">
+            <li><a href="recipes.html">Recipes</a>
+                <div class="dropdown-content">
+                <a href="breakfast.html">Breakfast</a>
+                <a href="lunch.html">Lunch/Dinner</a>
+                <a href="desserts.html">Desserts</a>
+                <a href="healthy.html">Healthy Options</a>
+                <a href="snacks.html">Snacks</a>
+                <a href="drinks.html">Drinks</a>
+                </div>
+            </li>
+            </div>
+        <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+        
+        <div class="search" >
+        <input type="text" placeholder="Search recipes...">
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Welcome to Recipe Vault!</h1>
+             <h4>Unleash your culinary  passion!
+             Discover Taste Sensations!
+             Elevate your cooking game</h4>
+            <a href="recipes.html" class="cta-button">Explore Recipes</a>
+        </div>
+      </section>
+    <div class="h2"><h2>Featured Recipes!</h2></div>
+
+    <div class="container"></div>
+
+<footer class="footer">
+    <p>&copy; 2024 Recipe Vault</p>
+</footer>
+   
+<script>
+    const recipes = [
+    {
+    "id": 1,
+    "name": "Butternut Squash Soup",
+    "image": "Photos/butternut squash.jpg",
+    "ingredients": [
+        "1 medium butternut squash, peeled and cubed",
+        "2 medium carrots, sliced",
+        "1 onion, diced",
+        "4 cups vegetable stock",
+        "1/2 cup heavy cream",
+        "1 teaspoon ground nutmeg",
+        "2 tablespoons olive oil",
+        "Salt and pepper to taste"
+    ],
+    "directions": [
+        "Preheat the oven to 400°F (200°C). Toss the butternut squash and carrots with olive oil, salt, and pepper. Roast for 25-30 minutes until tender.",
+        "In a large pot, sauté the diced onion in olive oil over medium heat until translucent.",
+        "Add the roasted vegetables and vegetable stock to the pot. Bring to a boil, then simmer for 10 minutes.",
+        "Blend the mixture using an immersion blender until smooth.",
+        "Stir in heavy cream and nutmeg. Adjust seasoning with salt and pepper.",
+        "Serve warm with a drizzle of cream or a sprinkle of fresh herbs."
+    ]
+},
+{
+    "id": 2,
+    "name": "Shepherd's Pie",
+    "image": "Photos/shepherds pie.jpg",
+    "ingredients": [
+        "1 pound ground beef",
+        "1 onion, diced",
+        "2 carrots, diced",
+        "1 cup frozen peas",
+        "2 tablespoons tomato paste",
+        "1 tablespoon Worcestershire sauce",
+        "1 cup beef stock",
+        "4 large potatoes, peeled and boiled",
+        "1/4 cup milk",
+        "2 tablespoons butter",
+        "Salt and pepper to taste"
+    ],
+    "directions": [
+        "Preheat the oven to 375°F (190°C).",
+        "In a skillet, cook the ground beef over medium heat until browned. Remove excess fat.",
+        "Add the onion and carrots, cooking until softened. Stir in tomato paste and Worcestershire sauce.",
+        "Pour in the beef stock, add peas, and simmer until the mixture thickens.",
+        "Mash the boiled potatoes with butter and milk. Season with salt and pepper.",
+        "Layer the meat mixture in a baking dish and spread the mashed potatoes on top.",
+        "Bake for 25-30 minutes until the top is golden brown."
+    ]
+},
+{
+    "id": 3,
+    "name": "Spiced Apple Crumble",
+    "image": "Photos/Spiced Apple Crumble.jpg",
+    "ingredients": [
+        "4 large apples, peeled and sliced",
+        "1/2 cup granulated sugar",
+        "1 teaspoon cinnamon",
+        "1/2 teaspoon nutmeg",
+        "1 cup rolled oats",
+        "1/2 cup brown sugar",
+        "1/2 cup all-purpose flour",
+        "1/4 cup butter, melted"
+    ],
+    "directions": [
+        "Preheat the oven to 350°F (175°C).",
+        "Toss the apple slices with granulated sugar, cinnamon, and nutmeg. Spread them in a greased baking dish.",
+        "In a bowl, mix oats, brown sugar, flour, and melted butter until crumbly.",
+        "Sprinkle the crumble mixture evenly over the apples.",
+        "Bake for 35-40 minutes until the topping is golden and the apples are tender.",
+        "Serve warm with vanilla ice cream or whipped cream."
+    ]
+}
+
+];
+
+const container = document.querySelector('.container');
+
+        recipes.forEach(recipe => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const anchor = document.createElement('a');
+            anchor.href = `featured.html?id=${recipe.id}`;
+
+            const title = document.createElement('p');
+            title.textContent = recipe.name;
+
+            const image = document.createElement('img');
+            image.src = recipe.image;
+            image.alt = recipe.name;
+            image.width = 200;
+            image.height = 200;
+
+            anchor.appendChild(title);
+            anchor.appendChild(image);
+            card.appendChild(anchor);
+            container.appendChild(card);
+        });
+    
+</script>
+</body>
+</html>

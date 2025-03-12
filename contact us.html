@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Vault</title>
+    <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="home.html">Recipe Vault</a> </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+         
+            <div class="dropdown">
+            <li><a href="recipes.html">Recipes</a>
+                <div class="dropdown-content">
+                    <a href="breakfast.html">Breakfast</a>
+                <a href="lunch.html">Lunch/Dinner</a>
+                <a href="desserts.html">Desserts</a>
+                <a href="healthy.html#">Healthy Options</a>
+                <a href="snacks.html">Snacks</a>
+                <a href="drinks.html">Drinks</a>
+                </div>
+            </li>
+            </div>
+        <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+        
+        <div class="search" >
+        <input type="text" placeholder="Search recipes...">
+        </div>
+        </div>
+    </nav>
+   
+    <div class="contact-us">
+          <h1>Contact Us</h1>
+            <p>We'd love to hear from you!</p>
+    <form action="submit_recipe.php" method="POST" class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="First Name   Surname" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com">
+        <label for="Comment">Comment:</label>
+        <textarea id="Comment" name="Comment" rows="2" placeholder="Any Comments?" required></textarea>
+ 
+        <div>
+        <button type="submit">Contact Us</button>
+        </div>
+        </form>
+    </div>
+
+    <div class="contact-us">
+            <h1>Submit a Recipe</h1>
+            <p>We'd love to share your recipes!</p>
+        <form>
+            <action="submit_recipe.php" method="POST" class="contact-form">
+            <label for="category">Recipe Category:</label>
+            <select id="category" name="category" required>
+                <option value="">Choose a category</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snacks">Snacks</option>
+                <option value="healthy">Healthy</option>
+                <option value="drinks">Drinks</option>
+            </select>
+
+            <label for="recipe-name">Recipe Name:</label>
+            <input type="text" id="recipe-name" name="recipeName" placeholder="Enter recipe name" required>           
+            <label for="recipe-image">Recipe Image URL:</label>
+            <input type="url" id="recipe-image" name="recipeImage" placeholder="Enter an image URL" required>           
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" name="ingredients" rows="4" placeholder="List the ingredients (one per line)" required></textarea>           
+            <label for="instructions">Instructions:</label>
+            <textarea id="instructions" name="instructions" rows="5" placeholder="Enter the recipe instructions" required></textarea>            
+            <label for="dietary-fact">Dietary Fact:</label>
+            <textarea id="dietary-fact" name="dietaryFact" rows="2" placeholder="Add a quick dietary fact" required></textarea>
+
+            <div>
+            <button type="submit">Submit Recipe</button>
+            </div>
+        </form>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Recipe Vault</p>
+        </footer>
+        
+    
+      
+
+</body>
+</html>

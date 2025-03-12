@@ -1,0 +1,559 @@
+* {
+    text-decoration: none;
+}
+body {
+    line-height: 2.0;
+    background-color:antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;  
+}
+
+p {
+    font-size: large;
+    font-weight: 500;
+    font-family:Palatino Linotype ;
+}
+
+
+.navbar {
+    font-family:Mongolian Baiti black ;
+    display: flex;
+    justify-content: space-between;
+    padding: .1rem;
+    align-items: center;
+    background-color: rgb(184, 95, 95);
+    margin-bottom: 2px; 
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+    height: 85px ;
+    font-size: 20px;
+    top: 0;
+    
+}
+    
+.navbar a:hover {
+    color: #172c66;
+}
+
+.logo {
+    font-family: Edwardian Script ITC;
+    font-size: 50px;
+    font-weight: 1000;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    padding-left: 50px;
+}
+
+.nav-links a {
+    color: #fef6e4;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.nav-links a:hoover {
+    background-color: burlywood
+}
+
+.contact-us {
+    max-width: 800px;
+    background-color:burlywood;
+    padding: 20px;
+    border-radius: 8px;
+    align-content: center;
+    display: block;
+    margin: 20px auto;
+    align-items: center;
+}
+
+.card1-container {
+    perspective: 1000px; /* Enables 3D effect */
+    display:inline-block;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 55px;
+  }
+  
+  .card1 {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d; /* Preserves 3D for children */
+    transition: transform 1.5s ease; /* Smooth flip transition */
+    align-items: center; 
+  }
+  
+  .card1-container:hover .card1 {
+    transform: rotateY(180deg); /* Flip on hover */
+  }
+  
+  .card1-front, .card1-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back when facing front */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+ .card1-front {
+    background-color: #ffe5b4; /* Front side color */
+  }
+  .card1-back {
+    background-color: #f8d7da; /* Back side color */
+    transform: rotateY(180deg); /* Make back initially hidden */    
+  }
+
+.contact-us h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;  
+}
+
+.contact-us p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+    align-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-form label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+    align-content: center;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    margin: auto;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 20%;
+    padding: 12px;
+    background-color:rgb(116, 67, 67);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    
+}
+
+.contact-form button:hover {
+    background-color:darkseagreen;
+}
+.recipe-image {
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.detail-image {
+    width: 300px; /* Adjust as needed for detail view */
+    height: 300px; /* Adjust as needed for detail view */
+    border-radius: 50%; /* Make the detail image circular */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+#recipe-detail img {
+    max-width: 100%;
+    border-radius: 8px;  
+}
+
+.h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    color: #333;
+}
+#recipe-detail h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    color: #333;
+}
+
+#recipe-detail p {
+    color: #555;
+    font-size: 20px; 
+}
+
+.recipe-title {
+    font-size: larger;
+    color: #333;
+    margin: 10px 0;
+    padding: 0 10px;
+    font-weight: normal;
+}
+
+#recipe-detail {
+    background-color:rgb(246, 220, 107);
+    padding: 3px;
+    margin:100px;
+    border-radius: 8px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+#recipe-detail h2 {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 20px;
+    color: #333;
+}
+
+#recipe-detail ul {
+    list-style-type:none;
+    text-align: center;
+    color: #333;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(239, 174, 174);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(249, 130, 130);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search {
+    margin-left: auto;
+    padding: 5px;
+}
+
+.hero {
+    margin-top: 5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh; 
+    background: url(breakfast/classic-pancakes.jpg) center/cover no-repeat;  
+}
+  
+.hero-overlay {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 3px;
+    margin: 100px;
+    position:absolute;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a55e32;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.h2{
+    text-align: center;
+    margin: 30px auto;
+}
+
+.h2 h2 {
+    color: rgb(120, 103, 11);
+    font-size: 36px;
+    display: inline-block;
+    position: relative;
+}
+
+.card {
+    background-color:bisque;
+    border: 1px solid goldenrod;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+}
+.container1{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    justify-content: center;
+    margin-left:10%;
+}
+
+.team{
+    text-align: center;
+    padding: 10px;
+    background-color:burlywood;
+    border-radius: 10px;
+    position: relative;
+}
+
+.team img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    border-color: #172c66;
+}
+#recipe-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 20px;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer {
+    background-color:inherit;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    color: brown;
+}
+.card a{
+    text-decoration: none;
+}
+
+.card:hover {
+    color: goldenrod;
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+#recipe-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 20px;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .container1 {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .container2 {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .container3 {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        flex-direction: column;
+        align-items: center;
+        padding: 11px;
+        gap: 20px;
+        margin: 10px;
+    }
+
+    
+    .nav-links {
+        flex-direction: column;
+        top: 5px;
+        padding: 20px 0; 
+        gap: 6px;
+    }
+
+    .p {
+        line-height: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-overlay {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .container,
+    .container1,
+    .container2,
+    .container3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .contact-us {
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 90%;
+    }
+}
+
+/* Mobile Screens (480px and below) */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .hero {
+        padding: 15px;
+    }
+
+    .hero-overlay {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .container,
+    .container1,
+    .container2,
+    .container3 {
+        grid-template-columns: 1fr;
+        padding: 5px;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-us {
+        padding: 10px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 100%;
+    }
+
+    .footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
